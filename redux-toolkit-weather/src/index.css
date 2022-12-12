@@ -1,3 +1,16 @@
+:root {
+  --global-light-mode: linear-gradient(135deg, #80ecf7 -20%, #706aff 120%);
+  --global-dark-mode: linear-gradient(#111642, #1d5372, #123352);
+  --hot-temp: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+  --cold-temp: linear-gradient(#009FFD, #2A2A72 100%);
+  --cold-temp2: linear-gradient(#3eadcfd8,#abe9cdde);
+  --dawn: linear-gradient(#291c6b, #4a257d, #884186);
+  --grey: #6782B4;
+  --small: 16px;
+  --medium: 24px;
+  --large: 32px;
+}
+  
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

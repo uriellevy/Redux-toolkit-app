@@ -1,0 +1,55 @@
+.mainItemContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    width: fit-content;
+    border-radius: 10px;
+    // border: 2px #000 solid;
+    background: var(--cold-temp2);
+    font-weight: 600;
+    .topSection {
+        margin-bottom: 20px;
+        .tempSignsWrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            button {
+                background-color: transparent;
+                border: none;
+                font-size: var(--medium);
+            }
+            .celsiusBtn {
+            }
+            .divider {
+                height: 30px;
+                width: 2px;
+                background-color: var(--grey);
+                margin: 0 15px;
+
+            }
+            .fahrenheitBtn {
+
+            }
+        }
+    }
+    .bottomSection {
+        display: flex;
+        flex-direction: column;
+
+        & > * {
+            margin-right: 20px;
+        }
+
+        .dayTemp {
+
+        }
+        .nightTemp {
+
+        }
+        .separator {
+
+        }
+    }
+}
