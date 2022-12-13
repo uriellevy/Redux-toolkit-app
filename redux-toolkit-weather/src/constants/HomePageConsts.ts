@@ -3,4 +3,7 @@ export const HomePageConsts = {
     CELSIUS_SIGN: "C°",
     FAHRENHEIT_SIGN: "F°",
     GLOBAL_TEMP_SIGN: "°",
+    HOME: "Home",
+    FAVORITES: "Favorites",
+    GLOBE: "Globe",
 }

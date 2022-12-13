@@ -5,9 +5,9 @@
     padding: 30px;
     width: fit-content;
     border-radius: 10px;
-    // border: 2px #000 solid;
     background: var(--cold-temp2);
     font-weight: 600;
+    font-size: var(--medium);
     .topSection {
         margin-bottom: 20px;
         .tempSignsWrapper {
@@ -19,6 +19,7 @@
                 background-color: transparent;
                 border: none;
                 font-size: var(--medium);
+                cursor: pointer;
             }
             .celsiusBtn {
             }
