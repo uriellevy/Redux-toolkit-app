@@ -20,6 +20,10 @@
                 border: none;
                 font-size: var(--medium);
                 cursor: pointer;
+                font-weight: var(--weight-bold);
+                color: #1d53728f;
+                transition: all 0.2s ease;
+                font-size: var(--large);
             }
             .celsiusBtn {
             }
@@ -32,6 +36,10 @@
             }
             .fahrenheitBtn {
 
+            }
+
+            .active {
+                color: #1d5372;
             }
         }
     }

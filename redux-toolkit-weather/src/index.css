@@ -9,6 +9,9 @@
   --small: 16px;
   --medium: 24px;
   --large: 32px;
+  --weight-light: 300;
+  --weight-bold: 600;
+  --weight-very-bold: 900;
 }
   
 body {

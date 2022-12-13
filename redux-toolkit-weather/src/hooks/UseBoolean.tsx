@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const useBoolean = (initialState = false) => {
+const UseBoolean = (initialState = false) => {
     const [bool, setBool] = useState<boolean>(initialState);
 
     const trueHandler = () => setBool(true);
@@ -19,4 +19,4 @@ const useBoolean = (initialState = false) => {
   ] as const
 }
 
-export default useBoolean
+export default UseBoolean

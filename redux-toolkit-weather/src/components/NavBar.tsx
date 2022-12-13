@@ -1,10 +1,10 @@
 import { NavLink, Link } from "react-router-dom";
 import classes from "./NavBar.module.scss";
 import { BsSun, BsMoonStars } from "react-icons/bs";
-import {HomePageConsts} from ".././constants/HomePageConsts"
+import {NavBarConsts} from "../constants/WeatherConsts"
 
 const NavBar = () => {
-    const {HOME_PAGE_TITLE, HOME, FAVORITES, GLOBE} = HomePageConsts;
+    const {HOME_PAGE_TITLE, HOME, FAVORITES, GLOBE} = NavBarConsts;
 
     return (
         <nav className={classes.navbarContainer}>

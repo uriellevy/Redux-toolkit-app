@@ -1,6 +1,6 @@
 import React from 'react'
 import classes from "./Home.module.scss"
-import {HomePageConsts} from "../../constants/HomePageConsts"
+import {HomePageConsts} from "../../constants/WeatherConsts"
 import MainItem from './MainItem';
 import WeeklyForcast from './WeeklyForcast';
 
