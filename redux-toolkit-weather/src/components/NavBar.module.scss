@@ -1,0 +1,19 @@
+.navbarContainer {
+    background: var(--global-light-mode);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #000 !important;
+    .navLogo {
+        .logoTitle {
+
+        }
+    }
+    .linksWrapper {
+        & > * {
+            text-decoration: none;
+            list-style: none;
+            margin: 0 10px;
+        }
+    }
+}

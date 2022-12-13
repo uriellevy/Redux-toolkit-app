@@ -1,15 +1,16 @@
 import { NavLink } from "react-router-dom";
-import "./Navbar.scss";
+import classes from "./NavBar.module.scss";
 
-const Nav = () => {
+
+const NavBar = () => {
 
     return (
-        <nav className={`nav-container`}>
-            <NavLink className="nav-logo" to='/'>
-                <h1 className="logo-title">logo</h1>
+        <nav className={classes.navbarContainer}>
+            <NavLink className={classes.navLogo} to='/'>
+                <h1 className={classes.logoTitle}>logo</h1>
             </NavLink>
 
-            <ul className="sdsadsa">
+            <ul className={classes.linksWrapper}>
                 <NavLink
                     to="/"
                     className={({ isActive }) => (isActive ? `active` : 'inactive')}
@@ -23,10 +24,10 @@ const Nav = () => {
                     favorites
                 </NavLink>
                 <NavLink
-                    to="/mostPopular"
+                    to="/globe"
                     className={({ isActive }) => (isActive ? 'active' : 'inactive')}
                 >
-                    others
+                    globe
                 </NavLink>
 
             </ul>
@@ -34,4 +35,4 @@ const Nav = () => {
     )
 }
 
-export default Nav
+export default NavBar
