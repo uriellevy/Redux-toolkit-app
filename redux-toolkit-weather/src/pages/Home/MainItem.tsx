@@ -3,10 +3,15 @@ import classes from "./MainItem.module.scss"
 import {HomePageConsts} from "../../constants/WeatherConsts"
 import UseBoolean from "../../hooks/UseBoolean"
 import {dummy_data} from "../../constants/ApiConsts"
+import {fahrenheitToCelciusConverter} from "../../utils/utilsFunctions"
 
 const MainItem = () => {
-    const {FAHRENHEIT_SIGN, CELSIUS_SIGN} = HomePageConsts;
+    const {FAHRENHEIT_SIGN, CELSIUS_SIGN, GLOBAL_TEMP_SIGN} = HomePageConsts;
     const [isCelsius, {setFalse, setTrue}] = UseBoolean(true)
+    const dayTemp = `Day: ${fahrenheitToCelciusConverter(isCelsius, dummy_data.DailyForecasts[0].Temperature.Maximum.Value)}${GLOBAL_TEMP_SIGN},`;
+    const nightTemp = `Night:${fahrenheitToCelciusConverter(isCelsius, dummy_data.DailyForecasts[0].Temperature.Minimum.Value)}${GLOBAL_TEMP_SIGN},`;
+    const dayDesc = dummy_data.DailyForecasts[0].Day.IconPhrase;
+    const nightDesc = dummy_data.DailyForecasts[0].Night.IconPhrase;
 
     return (
         <div className={classes.mainItemContainer}>
@@ -21,13 +26,13 @@ const MainItem = () => {
             </div>
             <div className={classes.bottomSection}>
                 <div className={classes.dayTempWrapper}>
-                    <div className={classes.dayTemp} >{dummy_data.DailyForecasts[0].Temperature.Maximum.Value}</div>
-                    <div className={classes.description}>{dummy_data.DailyForecasts[0].Day.IconPhrase}</div>
+                    <div className={classes.dayTemp} >{`${dayTemp}`}</div>
+                    <div className={classes.description}>{dayDesc}</div>
                 </div>
-                <div className={classes.separator}>separator</div>
+                <div className={classes.separator}/>
                 <div className={classes.nightTempWrapper}>
-                <div className={classes.nightTemp} >{dummy_data.DailyForecasts[0].Temperature.Minimum.Value}</div>
-                    <div className={classes.description}>{dummy_data.DailyForecasts[0].Night.IconPhrase}</div>
+                <div className={classes.nightTemp} >{nightTemp}</div>
+                    <div className={classes.description}>{nightDesc}</div>
                 </div>
             </div>
         </div>

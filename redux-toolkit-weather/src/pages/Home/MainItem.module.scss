@@ -14,7 +14,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 10px;
+            margin: 30px 0 20px 0;
             button {
                 background-color: transparent;
                 border: none;
@@ -25,8 +25,7 @@
                 transition: all 0.2s ease;
                 font-size: var(--large);
             }
-            .celsiusBtn {
-            }
+         
             .divider {
                 height: 30px;
                 width: 2px;
@@ -34,9 +33,7 @@
                 margin: 0 15px;
 
             }
-            .fahrenheitBtn {
-
-            }
+            
 
             .active {
                 color: #1d5372;
@@ -51,14 +48,34 @@
             margin-right: 20px;
         }
 
-        .dayTemp {
+        .dayTempWrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .dayTemp {
+
+            }
+            .description {
+
+            }
 
         }
-        .nightTemp {
+        .nightTempWrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .nightTemp {
 
+            }
+            .description {
+
+            }
         }
         .separator {
-
+            width: 100%;
+            height: 2px;
+            background-color: #1d53728f;
+            margin: 20px 0;
         }
     }
 }
