@@ -20,31 +20,34 @@ const HamburgerMenu = ({ setFalse, setToggle, isMenuOpen }: HamburgerMenuProps) 
 
     return (
         <div className={classes.hamburgerContainer}>
-            <RiMenu3Line className={classes.hamburgerIcon} onClick={setToggle}/>
-            <ul className={classes.linksWrapper}>
-                <RiCloseLine className={classes.closeBtn} onClick={setFalse}/>
-                <NavLink
-                    to="/"
-                    className={({ isActive }) => (isActive ? `active` : 'inactive')}
-                >
-                    <FaHome />
-                    {HOME}
-                </NavLink>
-                <NavLink
-                    to="/favorites"
-                    className={({ isActive }) => (isActive ? 'active' : 'inactive')}
-                >
-                    <MdOutlineSecurityUpdateGood/>
-                    {FAVORITES}
-                </NavLink>
-                <NavLink
-                    to="/globe"
-                    className={({ isActive }) => (isActive ? 'active' : 'inactive')}
-                >
-                    <BsGlobe/>
-                    {GLOBE}
-                </NavLink>
-            </ul>
+            {isMenuOpen ?
+                <ul className={classes.linksWrapper}>
+                    <RiCloseLine className={classes.closeBtn} onClick={setFalse} />
+                    <NavLink
+                        to="/"
+                        className={({ isActive }) => (isActive ? `active` : 'inactive')}
+                    >
+                        <FaHome />
+                        {HOME}
+                    </NavLink>
+                    <NavLink
+                        to="/favorites"
+                        className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+                    >
+                        <MdOutlineSecurityUpdateGood />
+                        {FAVORITES}
+                    </NavLink>
+                    <NavLink
+                        to="/globe"
+                        className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+                    >
+                        <BsGlobe />
+                        {GLOBE}
+                    </NavLink>
+                </ul>
+                :
+                <RiMenu3Line className={classes.hamburgerIcon} onClick={setToggle} />
+            }
         </div>
     )
 }

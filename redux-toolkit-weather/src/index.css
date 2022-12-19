@@ -8,9 +8,10 @@
   --grey: #6782B4;
   --frost: linear-gradient(#000428, #004e92);
   --deep-sea: linear-gradient(#2c3e50d3, #4ca2afce);
-  --small: 16px;
-  --medium: 24px;
-  --large: 32px;
+  --font-small: 1.5vw;
+  --font-medium: 3vw;
+  --font-large: 5vw;
+  --font-extra-large: 6vw;
   --weight-light: 300;
   --weight-bold: 600;
   --weight-very-bold: 900;
