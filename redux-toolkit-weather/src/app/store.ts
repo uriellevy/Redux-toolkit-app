@@ -1,8 +1,9 @@
 import {configureStore} from "@reduxjs/toolkit"
+import citySearchReducer from "../features//SearchedCitySlice"
 
 export const store = configureStore({
     reducer: {
-
+        citySearch: citySearchReducer
     },
 })
 

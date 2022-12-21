@@ -4,14 +4,18 @@ import {HomePageConsts} from "../../constants/WeatherConsts"
 import MainItem from './MainItem';
 import WeeklyForcast from './WeeklyForcast';
 
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchCurrentCityData } from '../../features/SearchedCitySlice';
+import { useAppSelector, useAppDispatch } from '../../app/hooks'
+import {  fetchCurrentCityData } from '../../features/SearchedCitySlice';
 
 
 const Home = () => {
-    const dispatch = useDispatch();
-    const data = useSelector(data => data)
+    const city = useAppSelector(state => state.citySearch)
+    const dispatch = useAppDispatch()
+    useEffect(() => {
+      dispatch(fetchCurrentCityData())
+    }, [])
 
+    console.log(city)
     
 
     return (
