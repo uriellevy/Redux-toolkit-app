@@ -15,6 +15,11 @@
   --weight-light: 300;
   --weight-bold: 600;
   --weight-very-bold: 900;
+  --border-radius: 10px;
+  --border-radius-small: 7px;
+  --font-small: 14px;
+  --font-medium: 18px;
+  --font-large: 24px;
 }
   
 body {

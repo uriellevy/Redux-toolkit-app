@@ -1,11 +1,13 @@
 import {configureStore} from "@reduxjs/toolkit"
 import citySearchReducer from "../features//SearchedCitySlice"
 import cityDailyForcastReducer from "../features/DailyForcastSlice"
+import cityWeeklyForcastReducer from "../features/weeklyForcastSlice"
 
 export const store = configureStore({
     reducer: {
         citySearch: citySearchReducer,
-        cityDailyForcast: cityDailyForcastReducer
+        cityDailyForcast: cityDailyForcastReducer,
+        cityWeeklyForcast: cityWeeklyForcastReducer,
     },
 })
 

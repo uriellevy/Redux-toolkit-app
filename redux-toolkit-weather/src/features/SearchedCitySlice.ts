@@ -1,15 +1,18 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
+import { Action } from "@remix-run/router";
 import { API_KEY, BASE_URL } from "../constants/ApiConsts";
 
 interface InitialState {
     currentCity: []
     loading: 'idle' | 'pending' | 'succeeded' | 'failed'
+    city: string
 }
 
 
 const initialState: InitialState = {
     currentCity: [],
     loading: "idle",
+    city: "tel aviv",
 }
 
 
@@ -19,10 +22,15 @@ export const fetchCurrentCityData = createAsyncThunk('city/getCity', async () =>
     return data[0];
 })
 
+
 export const citySlice = createSlice({
     name: 'city',
     initialState,
-    reducers: {},
+    reducers: {
+        submittedCity(state, action: PayloadAction<string>) {
+            state.city = action.payload
+          },
+    },
     extraReducers: (builder) => {
         builder.addCase(fetchCurrentCityData.pending, (state) => {
             state.loading = "pending"
@@ -37,6 +45,7 @@ export const citySlice = createSlice({
     },
 })
 
+export const { submittedCity } = citySlice.actions;
 
 export default citySlice.reducer;
 
