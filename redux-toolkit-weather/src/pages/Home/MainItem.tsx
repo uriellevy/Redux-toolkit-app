@@ -4,14 +4,21 @@ import {HomePageConsts} from "../../constants/WeatherConsts"
 import UseBoolean from "../../hooks/UseBoolean"
 import {dummy_data} from "../../constants/ApiConsts"
 import {fahrenheitToCelciusConverter} from "../../utils/utilsFunctions"
+import { City, DailyForcastData } from '../../types/WeatherTypes'
 
-const MainItem = () => {
+interface MainItemProps {
+    dailyForcast: DailyForcastData | undefined
+    city: City | undefined
+}
+
+const MainItem = ({dailyForcast, city}: MainItemProps) => {
     const {FAHRENHEIT_SIGN, CELSIUS_SIGN, GLOBAL_TEMP_SIGN} = HomePageConsts;
     const [isCelsius, {setFalse, setTrue}] = UseBoolean(true)
     const dayTemp = `Day: ${fahrenheitToCelciusConverter(isCelsius, dummy_data.DailyForecasts[0].Temperature.Maximum.Value)}${GLOBAL_TEMP_SIGN},`;
     const nightTemp = `Night:${fahrenheitToCelciusConverter(isCelsius, dummy_data.DailyForecasts[0].Temperature.Minimum.Value)}${GLOBAL_TEMP_SIGN},`;
     const dayDesc = dummy_data.DailyForecasts[0].Day.IconPhrase;
     const nightDesc = dummy_data.DailyForecasts[0].Night.IconPhrase;
+    
 
     return (
         <div className={classes.mainItemContainer}>

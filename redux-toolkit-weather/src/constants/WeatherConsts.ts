@@ -11,3 +11,5 @@ export const NavBarConsts = {
     FAVORITES: "Favorites",
     GLOBE: "Globe",
 }
+
+export const weekDaysDictionary = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday',];

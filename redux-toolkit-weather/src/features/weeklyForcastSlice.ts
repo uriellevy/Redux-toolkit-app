@@ -1,14 +1,15 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { API_KEY, BASE_URL } from "../constants/ApiConsts";
+import { WeeklyForcastData } from "../types/WeatherTypes";
 
 interface InitialState {
-    dailyForcast: []
+    dailyForcast: WeeklyForcastData | undefined
     loading: 'idle' | 'pending' | 'succeeded' | 'failed'
 }
 
 
 const initialState: InitialState = {
-    dailyForcast: [],
+    dailyForcast: undefined,
     loading: "idle",
 }
 

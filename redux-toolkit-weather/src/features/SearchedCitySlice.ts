@@ -1,16 +1,16 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
-import { Action } from "@remix-run/router";
 import { API_KEY, BASE_URL } from "../constants/ApiConsts";
+import {City} from "../types/WeatherTypes";
 
 interface InitialState {
-    currentCity: []
+    currentCity: City | undefined
     loading: 'idle' | 'pending' | 'succeeded' | 'failed'
     city: string
 }
 
 
 const initialState: InitialState = {
-    currentCity: [],
+    currentCity: undefined,
     loading: "idle",
     city: "tel aviv",
 }

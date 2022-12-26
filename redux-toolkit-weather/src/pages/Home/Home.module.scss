@@ -10,38 +10,5 @@
         margin-bottom: 100px;
     }
 
-    .cityForm {
-        display: flex;
-        align-items: baseline;
-        overflow: hidden;
-        margin: 10px 0 30px 0;
-
-        button {
-            background: var(--deep-sea);
-            color: #fff;
-            border: none;
-            padding: 9.5px 8px;
-            font-size: var(--font-small);
-
-
-            border-top-right-radius: 8px;
-            border-bottom-right-radius: 8px;
-            cursor: pointer;
-        }
-
-        .searchInput {
-
-            .input {
-                border-top-left-radius: 8px;
-                border-bottom-left-radius: 8px;
-                border: none;
-                height: 25px;
-                background-color: rgba(255, 255, 255, 0.507);
-                outline: none;
-                padding: 5px 8px;
-                font-size: var(--font-small);
-                font-weight: var(--weight-light);
-            }
-        }
-    }
+    
 }

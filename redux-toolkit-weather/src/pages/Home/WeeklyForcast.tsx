@@ -1,14 +1,17 @@
-import React from 'react'
 import classes from "./WeeklyForcast.module.scss"
 import { fiveDaysDummyData } from "../../constants/ApiConsts"
 import WeeklyForcastSlotItem from './WeeklyForcastSlotItem'
+import { WeeklyForcastData } from '../../types/WeatherTypes'
 
+interface WeeklyForcast {
+  weeklyForcast: WeeklyForcastData | undefined
+}
 
-
-const WeeklyForcast = () => {
+const WeeklyForcast = ({weeklyForcast}: WeeklyForcast) => {
+  
   return (
     <div className={classes.weeklyForcastContainer}>
-      {fiveDaysDummyData.DailyForecasts.map((item, idx) => (
+      {weeklyForcast?.DailyForecasts.map((item, idx) => (
         <WeeklyForcastSlotItem key={idx} slotItem={item}/>
       ))}
     </div>
