@@ -6,6 +6,7 @@ import { RiMenu3Line, RiCloseLine } from "react-icons/ri"
 import { FaHome } from "react-icons/fa"
 import { BsGlobe } from "react-icons/bs"
 import { MdOutlineSecurityUpdateGood } from "react-icons/md"
+import UseOutsideClick from "../hooks/UseOutsideClick"
 
 interface HamburgerMenuProps {
     isMenuOpen: boolean
@@ -16,13 +17,18 @@ interface HamburgerMenuProps {
 const HamburgerMenu = ({ setFalse, setToggle, isMenuOpen }: HamburgerMenuProps) => {
     const { HOME, FAVORITES, GLOBE } = NavBarConsts;
     const linksWrapperStyle = classes.hamburgerIcon + "" + isMenuOpen ? "" : "none";
+    const ref = UseOutsideClick(setFalse);
+    const openSettingsHandler = (event:any) => {
+        setToggle();
+        event.stopPropagation();
+    };
 
 
     return (
-        <div className={classes.hamburgerContainer}>
+        <div className={classes.hamburgerContainer} ref={ref}>
             {isMenuOpen ?
                 <ul className={classes.linksWrapper}>
-                    <RiCloseLine className={classes.closeBtn} onClick={setFalse} />
+                    <RiCloseLine className={classes.closeBtn} onClick={setFalse}  />
                     <NavLink
                         to="/"
                         className={({ isActive }) => (isActive ? `active` : 'inactive')}
@@ -46,7 +52,7 @@ const HamburgerMenu = ({ setFalse, setToggle, isMenuOpen }: HamburgerMenuProps) 
                     </NavLink>
                 </ul>
                 :
-                <RiMenu3Line className={classes.hamburgerIcon} onClick={setToggle} />
+                <RiMenu3Line className={classes.hamburgerIcon} onClick={openSettingsHandler} />
             }
         </div>
     )
