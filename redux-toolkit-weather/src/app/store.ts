@@ -2,12 +2,14 @@ import {configureStore} from "@reduxjs/toolkit"
 import citySearchReducer from "../features//SearchedCitySlice"
 import cityDailyForcastReducer from "../features/DailyForcastSlice"
 import cityWeeklyForcastReducer from "../features/weeklyForcastSlice"
+import geoPositionReducer from "../features/GeoPositionSlice"
 
 export const store = configureStore({
     reducer: {
         citySearch: citySearchReducer,
         cityDailyForcast: cityDailyForcastReducer,
         cityWeeklyForcast: cityWeeklyForcastReducer,
+        geoPositionLocation: geoPositionReducer,
     },
 })
 
