@@ -6,7 +6,7 @@ import HamburgerMenu from "./HamburgerMenu";
 import UseBoolean from ".././hooks/UseBoolean"
 
 const NavBar = () => {
-    const {HOME_PAGE_TITLE, HOME, FAVORITES, GLOBE} = NavBarConsts;
+    const {HOME_PAGE_TITLE, HOME, MAPS, GLOBE} = NavBarConsts;
     const [isMenuOpen , {setFalse, setTrue, setToggle}] = UseBoolean(false)
 
     return (
@@ -26,10 +26,10 @@ const NavBar = () => {
                     {HOME}
                 </NavLink>
                 <NavLink
-                    to="/favorites"
+                    to="/maps"
                     className={({ isActive }) => (isActive ? 'active' : 'inactive')}
                 >
-                    {FAVORITES}
+                    {MAPS}
                 </NavLink>
                 <NavLink
                     to="/globe"

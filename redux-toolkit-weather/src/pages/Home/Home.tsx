@@ -42,7 +42,7 @@ const Home = () => {
             errorCallback
         );
         // dispatch(fetchDeviceLocation())
-    }, [])
+    }, [test])
     console.log(test, deviceLocationData)
 
     const successCallback = (position: any) => {

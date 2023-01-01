@@ -8,7 +8,7 @@ export const HomePageConsts = {
 export const NavBarConsts = {
     HOME_PAGE_TITLE: "Weather App",
     HOME: "Home",
-    FAVORITES: "Favorites",
+    MAPS: "Maps",
     GLOBE: "Globe",
 }
 

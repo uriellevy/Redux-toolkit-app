@@ -15,7 +15,7 @@ interface HamburgerMenuProps {
 }
 
 const HamburgerMenu = ({ setFalse, setToggle, isMenuOpen }: HamburgerMenuProps) => {
-    const { HOME, FAVORITES, GLOBE } = NavBarConsts;
+    const { HOME, MAPS, GLOBE } = NavBarConsts;
     const linksWrapperStyle = classes.hamburgerIcon + "" + isMenuOpen ? "" : "none";
     const ref = UseOutsideClick(setFalse);
     const openSettingsHandler = (event:any) => {
@@ -37,11 +37,11 @@ const HamburgerMenu = ({ setFalse, setToggle, isMenuOpen }: HamburgerMenuProps) 
                         {HOME}
                     </NavLink>
                     <NavLink
-                        to="/favorites"
+                        to="/maps"
                         className={({ isActive }) => (isActive ? 'active' : 'inactive')}
                     >
                         <MdOutlineSecurityUpdateGood />
-                        {FAVORITES}
+                        {MAPS}
                     </NavLink>
                     <NavLink
                         to="/globe"
