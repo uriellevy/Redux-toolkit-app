@@ -1,7 +1,8 @@
 import React, { useRef, useState, useMemo } from 'react';
-import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
+import { GoogleMap, useLoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 import { InfinitySpin } from 'react-loader-spinner';
 import classes from "./Maps.module.scss";
+// require('dotenv').config();
 
 
 const center = { lat: 48.8584, lng: 2.2945 }
@@ -9,28 +10,26 @@ const center = { lat: 48.8584, lng: 2.2945 }
 const Maps = () => {
 
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyD89d-AUG6DL4R2p7T16fL3aUwWEvZWu0k",
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY || "",
   });
 
-
-
-
-
-  if (!isLoaded) return <div>Loading...</div>;
-  return <Map />;
-}
-
-export default Maps
-
-
-
-function Map() {
-  const center = useMemo(() => ({ lat: 44, lng: -80 }), []);
+  console.log(process.env.REACT_APP_GOOGLE_MAPS_API_KEY)
+  const onLoad = (marker: any) => {
+    console.log('marker: ', marker)
+  }
 
   return (
-    <GoogleMap zoom={10} center={center} mapContainerClassName={classes.mapContainer}>
-      <Marker position={center} />
-    </GoogleMap>
+    <div className={classes.mapContainer}>
+      {isLoaded ?
+
+        <GoogleMap zoom={10} center={center} mapContainerClassName={classes.map}>
+          <Marker position={center} /* onLoad={onLoad} key="marker_1" */ />
+        </GoogleMap>
+        :
+        <InfinitySpin />
+      }
+    </div>
   );
 }
 
+export default Maps

@@ -1,4 +1,13 @@
 .mapContainer {
-    width: 200px;
-    height: 200px;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    .map {
+        width: 70%;
+        height: 70%;
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px var(--grey);
+    }
 }
