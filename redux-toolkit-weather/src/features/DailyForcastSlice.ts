@@ -3,7 +3,7 @@ import { API_KEY, BASE_URL } from "../constants/ApiConsts";
 import {DailyForcastData} from "../types/WeatherTypes"
 
 interface InitialState {
-    dailyForcast: DailyForcastData | undefined
+    dailyForcast: any
     loading: 'idle' | 'pending' | 'succeeded' | 'failed'
 }
 

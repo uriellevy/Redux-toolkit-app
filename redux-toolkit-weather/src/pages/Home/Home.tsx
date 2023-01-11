@@ -19,43 +19,45 @@ const Home = () => {
     const dailyForcast = useAppSelector(state => state.cityDailyForcast);
     const weeklyForcast = useAppSelector(state => state.cityWeeklyForcast);
     const citySubmitted = useAppSelector(state => state.citySearch.city);
-    const deviceLocationData = useAppSelector(state => state.geoPositionLocation.currentLocationData)
-    const test = useAppSelector(state => state.geoPositionLocation.coords)
+    // const deviceLocationData = useAppSelector(state => state.geoPositionLocation.currentLocationData)
+    // const test = useAppSelector(state => state.geoPositionLocation.coords)
     // const [coords, setCoords] = useState({
     //     latitude: 0,
     //     longitude: 0,
     // })
     const dispatch = useAppDispatch();
     const isFetchSucceeded = city.loading === "succeeded" && dailyForcast.loading === "succeeded" && weeklyForcast.loading === "succeeded";
-    // useEffect(() => {
-    //   dispatch(fetchCurrentCityData())
-    //   dispatch(fetchDailyForcast())
-    //   dispatch(fetchWeeklyForcast())
-    // }, [citySubmitted])
-
-
-
-
     useEffect(() => {
-        navigator.geolocation.watchPosition(
-            successCallback,
-            errorCallback
-        );
-        // dispatch(fetchDeviceLocation())
-    }, [test])
-    console.log(test, deviceLocationData)
+      dispatch(fetchCurrentCityData())
+      dispatch(fetchDailyForcast())
+      dispatch(fetchWeeklyForcast())
+    }, [citySubmitted])
 
-    const successCallback = (position: any) => {
-        console.log(position);
-        dispatch(currentCoords({
-            latitude: position.coords.latitude,
-            longitude: position.coords.longitude,
-        }))
-    };
+    console.log(isFetchSucceeded)
 
-    const errorCallback = (error: any) => {
-        console.log(error);
-    };
+
+
+
+    // useEffect(() => {
+    //     navigator.geolocation.watchPosition(
+    //         successCallback,
+    //         errorCallback
+    //     );
+    //     // dispatch(fetchDeviceLocation())
+    // }, [test])
+    // console.log(test, deviceLocationData)
+
+    // const successCallback = (position: any) => {
+    //     console.log(position);
+    //     dispatch(currentCoords({
+    //         latitude: position.coords.latitude,
+    //         longitude: position.coords.longitude,
+    //     }))
+    // };
+
+    // const errorCallback = (error: any) => {
+    //     console.log(error);
+    // };
 
 
 

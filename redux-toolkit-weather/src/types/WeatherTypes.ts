@@ -32,11 +32,11 @@ interface DayOrNight {
 interface Temperature {
     Maximum: {
         Unit: string
-        Value: string
+        Value: number
     }
     Minimum: {
         Unit: string
-        Value: string
+        Value: number
     }
 }
 interface Headline {
